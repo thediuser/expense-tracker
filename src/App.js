@@ -431,7 +431,8 @@ const ExpenseTrackerApp = () => {
             <button
               className="w-full bg-red-500 text-white p-2 rounded-lg font-bold"
               onClick={() => {
-                if (confirm('هل أنت متأكد من رغبتك في حذف جميع البيانات؟ لا يمكن التراجع عن هذا الإجراء.')) {
+                const confirmDelete = window.confirm('هل أنت متأكد من رغبتك في حذف جميع البيانات؟ لا يمكن التراجع عن هذا الإجراء.');
+                if (confirmDelete) {
                   localStorage.clear();
                   window.location.reload();
                 }
